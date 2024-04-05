@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acl_registration,internship.registration default,model_internship_registration,,1,0,0,0
+acl_interns_registers,internship.registration_registers,model_internship_registration,group_registers,1,1,1,1
+acl_interview_pass,interview,model_interview,group_interview,1,1,1,1

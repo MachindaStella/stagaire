@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="assets_end" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/static/src/js/m2m_group_view.js" />
+            <script type="text/javascript" src="/static/src/js/m2m_group_model.js" />
+            <script type="text/javascript" src="/static/src/js/m2m_group_controller.js" />
+            <script type="text/javascript" src="/static/src/js/m2m_group_renderer.js" />
+            <script src="/static/src/js/custom.js" type="text/javascript" />
+            <link href="/static/src/scss/custom.scss" rel="stylesheet" type="text/scss" />
+        </xpath>
+    </template>
+</odoo>

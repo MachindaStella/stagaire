@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+        <template id="intern_report">
+            <t t-call="web.html_container">
+               <t t-call="web.external_layout">
+                     <t t-foreach="docs" t-as="doc">
+                     <div class="mt-5">
+                        <div class="page">
+                            <h2 class="center">Attestation of the intern <span t-field="doc.name"/></h2> -->
+                            <div id="informations" class="row mt-4 mb-4">
+                           
+                                <div class="col-auto col-3">
+                                    <strong> Name: </strong>
+                                    <p class="m-0" t-field="doc.name" />
+                                </div>
+
+                                <div class="col-auto col-3">
+                                    <strong> Date of birth: </strong>
+                                    <p class="m-0" t-field="doc.dob" />
+                                </div>
+
+                                <div class="col-auto col-3">
+                                    <strong> Internship duration: </strong>
+                                    <p class="m-0" t-field="doc.internship_duration" />
+                                </div>
+
+                                <div class="col-auto col-3">
+                                    <strong> Supervisor: </strong>
+                                    <p class="m-0" t-field="doc.supervisor" />
+                                </div>
+
+                                 <div class="col-auto col-3">
+                                    <strong> Interview day: </strong>
+                                    <p class="m-0" t-field="doc.interview_day" />
+                                </div>
+
+                                 <div class="col-auto col-3">
+                                    <strong> Intern profile: </strong>
+                                    <p class="m-0" t-field="doc.intern_profile" />
+                                </div>
+
+                                 <div class="col-auto col-3">
+                                    <strong> Email: </strong>
+                                    <p class="m-0" t-field="doc.email" />
+                                </div>
+                            
+                            </div> 
+
+                            <table class="table table-sm table-border">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Birth of Birth</th>
+                                        <th>Internship Duration</th>
+                                        <th>Supervisor</th>
+                                        <th>Interview day</th>
+                                        <th>Intern Profile</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span t-field="doc.name" /></td>
+                                        <td><span t-field="doc.dob" /></td>
+                                        <td><span t-field="doc.internship_duration" /></td>
+                                        <td><span t-field="doc.supervisor" /></td>
+                                        <td><span t-field="doc.interview_day" /></td>
+                                        <td><span t-field="doc.intern_profile"/></td>
+                                        <td><span t-field="doc.email" /></td>
+                                    
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </odoo>
+
+
+    

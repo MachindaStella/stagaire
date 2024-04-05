@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  web:
+    image: odoo:17.0
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    volumes:
+      - ./addons:/mnt/extra-addons
+      - ./config:/etc/odoo 
+      # - ./data:/var/lib/odoo
+    command: 
+      sh -c "odoo -c /etc/odoo/odoo.conf -s -u stagaire --test-enable --test-tags /standard"
+  db:
+    image: postgres:15.0
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=admin
+      - POSTGRES_DB=postgres
+      # - PGDATA=/var/lib/postgresql/data/pgdata

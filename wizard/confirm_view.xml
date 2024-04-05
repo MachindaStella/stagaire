@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+        <record id="change_confirm_view_form" model="ir.ui.view">
+            <field name="name">interview Change Date</field>
+            <field name="model">confirm.change</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="msg"/>
+                    </group>
+                    <button type="object" name="yes" string="Yes" class="oe_highlight"/>
+                    <button special="cancel" string="NO" class="btn-secondary" />
+
+                    <footer>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="change_confirm_action" model="ir.actions.act_window">
+            <field name="name">Change Confirmation</field>
+            <field name="res_model">confirm.change</field>
+            <field name="view_mode">form</field>
+            <field name="binding_view_types">form,list</field>
+            <field name="target">new</field>
+        </record>
+
+    </odoo>

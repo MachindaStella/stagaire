@@ -1,0 +1,552 @@
+ <record id='internship_interview_action' model='ir.actions.act_window'>
+                <field name="name">interview action</field>
+                <field name="res_model">interview</field>
+                <field name="view_mode">tree,form</field>
+            </record>
+             <menuitem name="Interview" id="internship_interview_menu" parent="registration_base_menu" action="internship_interview_action"/>
+
+            <record id="internship_interview_view_form" model="ir.ui.view">
+                <field name="name">Interview Form</field>
+                <field name="model">interview</field>
+                <field name="arch" type="xml">
+                <form>
+                    <app name="registration" position="inside">
+                        <div style="text-align:center">
+                            <h2 style="text-decoration: underline;">Interview of a new intern</h2>
+                                <div>
+                                    <div class="row mt16 o_form_container" name="form_container">
+                                        <div class="col-6 col-lg-6 o_setting_box">
+                                           Questions
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <h1> Questions general </h1>
+
+                        <p> Question 1: Parle moi de vous </p>
+                        <p> Question 2: Comment avez vous pris connaissance de third? </p>
+                        <p> Question 3: Quels sont les different stage que tu as deja eu a effectuer </p>
+                        <p> Question 4: as-tu deja entendu parler du systeme linux? si oui la tu deja 
+                        utiliser et cetait a quel occassion? </p>
+                        <p> Question 5: as-tu  deja entendu parler d'odoo? si oui qu'est ce que sais? </p>
+                        <notebook>
+                            <page string="Commercial">
+                                <p> Question 6: Avez vous deja gagner un marcher? si oui quel etait
+                                ce marcher et comment est-ce que ca c'est passer? </p>
+                                <p> Question 7: Quelle est votre niveau experience en marketing?</p>
+                                <p> Question 8: Comment est-ce vous gerer la communiction avec une equipe
+                                et avec les clients </p>
+                            </page>
+                        </notebook>
+                        <notebook>
+                            <page string="IT">
+                                <p> Question 6: Vous programmer en quel langage?</p>
+                                <p> Question 7: programmer vous en python? si oui avez vous deja 
+                                developper un project avec ce langage?</p>
+                                <p> Question 8: Connaissez vous le xml?  </p>
+                                <p> Question 9: Avez vous deja entendu parler de la vitualisation avec docker </p>
+                                <p> Question 10: Que savez vous des reseaux informatique? </p>
+                            </page>
+                        </notebook>
+
+                    </app>
+                    <group>
+                        <group>
+                                
+                            <field name="decision"/>
+                            
+                            <field name="starting_date"/>
+                            <field name="ending_date"/>
+                        </group>
+                    </group>
+               
+                 </form>
+            </field>
+        </record>
+
+
+        <h1>General Questions</h1>
+
+<p>Question 1: Tell me about yourself.</p>
+<p>Question 2: How did you become aware of Third?</p>
+<p>Question 3: What different internships have you already completed?</p>
+<p>Question 4: Have you heard of the Linux system? If yes, have you used it and on what occasion?</p>
+<p>Question 5: Have you heard of Odoo? If yes, what do you know about it?</p>
+
+<notebook>
+    <page string="Commercial">
+        <p>Question 6: Have you ever won a contract? If yes, what was the contract and how did it happen?</p>
+        <p>Question 7: What is your level of experience in marketing?</p>
+        <p>Question 8: How do you manage communication with a team and clients?</p>
+    </page>
+</notebook>
+
+<notebook>
+    <page string="IT">
+        <p>Question 6: Which programming languages do you use?</p>
+        <p>Question 7: Do you program in Python? If yes, have you developed a project using this language?</p>
+        <p>Question 8: Are you familiar with XML?</p>
+        <p>Question 9: Have you heard of virtualization with Docker?</p>
+        <p>Question 10: What do you know about computer networks?</p>
+    </page>
+</notebook>
+
+
+invisible= "[('end_visibility', '=', False)]"  <field name="end_visibility" invisible= "[('end_visibility', '=', True)]"/>
+
+
+
+   
+Projects
+1-3 / 3
+Office DesignYourCompany, Joel Willis
+11/15/202301/26/2024
+6Tasks
+1/3
+Renovations
+11/17/202301/12/2024
+4Tasks
+Research & Development
+5Tasks
+Get View
+
+<kanban class="o_kanban_dashboard o_project_kanban o_emphasize_colors" js_class="project_project_kanban" on_create="project.open_create_project" action="action_view_tasks" type="object" quick_create_view="project.quick_create_project_form" sample="1" default_order="is_favorite desc, sequence, name, id">
+                    <field name="display_name" field_id="display_name_0"/>
+                    <field name="partner_id" field_id="partner_id_0"/>
+                    <field name="color" field_id="color_0"/>
+                    <field name="task_count" field_id="task_count_0"/>
+                    <field name="milestone_count_reached" field_id="milestone_count_reached_0"/>
+                    <field name="milestone_count" field_id="milestone_count_0"/>
+                    <field name="allow_milestones" field_id="allow_milestones_0"/>
+                    <field name="label_tasks" field_id="label_tasks_0"/>
+                    <field name="alias_email" field_id="alias_email_0"/>
+                    <field name="is_favorite" field_id="is_favorite_0"/>
+                    <field name="rating_count" field_id="rating_count_0"/>
+                    <field name="rating_avg" field_id="rating_avg_0"/>
+                    <field name="rating_status" field_id="rating_status_0"/>
+                    <field name="rating_active" field_id="rating_active_0"/>
+                    <field name="analytic_account_id" field_id="analytic_account_id_0"/>
+                    <field name="date" on_change="1" field_id="date_0"/>
+                    <field name="privacy_visibility" field_id="privacy_visibility_0"/>
+                    <field name="last_update_color" field_id="last_update_color_0"/>
+                    <field name="last_update_status" on_change="1" field_id="last_update_status_0"/>
+                    <field name="tag_ids" widget="many2many_tags" field_id="tag_ids_0"/>
+                    <progressbar/>
+                    <field name="sequence" widget="handle" field_id="sequence_0"/>
+                    <templates>
+                        <t t-name="kanban-menu">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6 o_kanban_card_manage_section o_kanban_manage_view">
+                                        <h5 role="menuitem" class="o_kanban_card_manage_title">
+                                            <span>View</span>
+                                        </h5>
+                                        <div role="menuitem">
+                                            <a name="action_view_tasks" type="object">Tasks</a>
+                                        </div>
+                                        <div role="menuitem" t-if="record.allow_milestones.raw_value">
+                                            <a name="action_get_list_view" type="object">Milestones</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 o_kanban_card_manage_section o_kanban_manage_reporting">
+                                        <h5 role="menuitem" class="o_kanban_card_manage_title">
+                                            <span>Reporting</span>
+                                        </h5>
+                    <div role="menuitem">
+                        <a name="project_update_all_action" type="object" t-attf-context="{'active_id': #{record.id.raw_value} }">Project Updates</a>
+                    </div>
+                                        <div role="menuitem" class="o_kanban_task_analysis">
+                                            <a name="action_view_tasks_analysis" type="object">Tasks Analysis</a>
+                                        </div>
+                                        <div role="menuitem" name="project_burndown_menu">
+                                            <a name="action_project_task_burndown_chart_report" type="object">Burndown Chart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="o_kanban_card_manage_settings row">
+                                    <div role="menuitem" aria-haspopup="true" class="col-6">
+                                        <ul class="oe_kanban_colorpicker" data-field="color" role="popup"/>
+                                    </div>
+                                    <div role="menuitem" class="col-6">
+                                        <a t-if="record.privacy_visibility.raw_value == 'portal'" class="dropdown-item" role="menuitem" name="187" type="action" context="{'dialog_size': 'medium'}">Share</a>
+                                        <a class="dropdown-item" role="menuitem" type="edit">Settings</a>
+                                    </div>
+                                    </div>
+                            </div>
+                        </t>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click o_has_icon oe_kanban_content oe_kanban_card">
+                                <div class="o_project_kanban_main d-flex align-items-baseline gap-1">
+                                    <field name="is_favorite" widget="boolean_favorite" nolabel="1" force_save="1" field_id="is_favorite_1"/>
+                                    <div class="o_kanban_card_content mw-100">
+                                        <div class="o_kanban_primary_left">
+                                            <div class="o_primary">
+                                                <span class="o_text_overflow" t-att-title="record.display_name.value"><t t-esc="record.display_name.value"/></span>
+                                                <span class="o_text_overflow text-muted" t-if="record.partner_id.value">
+                                                    <span class="fa fa-user me-2" aria-label="Partner" title="Partner"/><t t-esc="record.partner_id.value"/>
+                                                </span>
+                                                <div t-if="record.date.raw_value or record.date_start.raw_value" class="text-muted o_row">
+                                                    <span class="fa fa-clock-o me-2" title="Dates"/><field name="date_start" on_change="1" field_id="date_start_0"/>
+                                                    <i t-if="record.date.raw_value and record.date_start.raw_value" class="fa fa-long-arrow-right mx-2 oe_read_only" aria-label="Arrow icon" title="Arrow"/>
+                                                    <field name="date" on_change="1" field_id="date_1"/>
+                                                </div>
+                                                <div t-if="record.alias_email.value" class="text-muted text-truncate" t-att-title="record.alias_email.value">
+                                                    <span class="fa fa-envelope-o me-2" aria-label="Domain Alias" title="Domain Alias"/><t t-esc="record.alias_email.value"/>
+                                                </div>
+                                                <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}" field_id="tag_ids_1"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="o_kanban_record_bottom mt-3">
+                                    <div class="oe_kanban_bottom_left">
+                                        <div class="o_project_kanban_boxes d-flex align-items-baseline">
+                                            <a class="o_project_kanban_box" name="action_view_tasks" type="object">
+                                                <div>
+                                                    <span class="o_value"><t t-esc="record.task_count.value"/></span>
+                                                    <span class="o_label ms-1"><t t-esc="record.label_tasks.value"/></span>
+                                                </div>
+                                            </a>
+                                            <a t-if="record.allow_milestones and record.allow_milestones.raw_value and record.milestone_count.value &gt; 0" class="o_kanban_inline_block btn-link text-dark small" role="button" name="action_get_list_view" type="object" t-attf-title="#{record.milestone_count_reached.value} Milestones reached out of #{record.milestone_count.value}">
+                                                <span class="fa fa-flag me-1"/>
+                                                <t t-out="record.milestone_count_reached.value"/>/<t t-out="record.milestone_count.value"/>
+                                            </a>
+                                        </div>
+                                        <field name="activity_ids" widget="kanban_activity" field_id="activity_ids_0"/>
+                                    </div>
+                                    <div class="oe_kanban_bottom_right">
+                                        <field name="user_id" widget="many2one_avatar_user" domain="[('share', '=', False)]" field_id="user_id_0"/>
+                                        <field t-if="record.last_update_status.value &amp;&amp; widget.editable" name="last_update_status" widget="project_state_selection" on_change="1" field_id="last_update_status_1"/>
+                                        <span t-if="record.last_update_status.value &amp;&amp; !widget.editable" t-att-class="'o_status_bubble mx-0 o_color_bubble_' + record.last_update_color.value" t-att-title="record.last_update_status.value"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                    <field name="id" field_id="id_0"/>
+                </kanban>
+
+Activity<form string="Task" class="o_form_project_tasks" js_class="project_task_form">
+                    <field name="recurrence_id" invisible="1" on_change="1" can_create="True" can_write="True" field_id="recurrence_id_0"/>
+                    <field name="allow_task_dependencies" invisible="1" field_id="allow_task_dependencies_0"/>
+                    <field name="rating_last_value" invisible="1" field_id="rating_last_value_0"/>
+                    <field name="rating_count" invisible="1" field_id="rating_count_0"/>
+                    <field name="allow_milestones" invisible="1" field_id="allow_milestones_0"/>
+                    <field name="parent_id" invisible="1" on_change="1" can_create="True" can_write="True" field_id="parent_id_0"/>
+                    <field name="company_id" invisible="1" on_change="1" can_create="True" can_write="True" field_id="company_id_0"/>
+                    <field name="project_id" invisible="1" on_change="1" can_create="True" can_write="True" field_id="project_id_0"/>
+                    <header>
+                        <field name="stage_id" widget="statusbar_duration" options="{'clickable': '1', 'fold_field': 'fold'}" invisible="not project_id and not stage_id" on_change="1" can_create="True" can_write="True" field_id="stage_id_0"/>
+                        <field name="state" widget="statusbar" options="{'clickable': '1', 'fold_field': 'fold'}" invisible="1" on_change="1" field_id="state_0"/>
+                        <field name="personal_stage_type_id" widget="statusbar" options="{'clickable': '1', 'fold_field': 'fold'}" invisible="project_id" domain="[('user_id', '=', uid)]" string="Personal Stage" can_create="True" can_write="True" field_id="personal_stage_type_id_0"/>
+                    </header>
+                    <sheet string="Task">
+                    <div class="oe_button_box" name="button_box">
+                        <!-- Dummy tag for organizing buttons, using position='replace' when inheriting -->
+                        <span id="button_products" invisible="1"/>
+                        <span id="button_worksheet" invisible="1"/>
+                        <!-- Dummy tag used to organize buttons, englobing the 3 buttons modifies the width of the button -->
+                        <span id="start_rating_buttons" invisible="1"/>
+                        <field name="rating_avg" invisible="1" on_change="1" field_id="rating_avg_0"/>
+                        <field name="rating_active" invisible="1" field_id="rating_active_0"/>
+                        <!-- Dummy tag used to organize buttons -->
+                        <span id="end_rating_buttons" invisible="1"/>
+                        <button name="action_open_parent_task" type="object" class="oe_stat_button" icon="fa-tasks" invisible="not parent_id">
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">Parent Task</span>
+                            </div>
+                        </button>
+                        <button name="250" type="action" class="oe_stat_button" icon="fa-tasks" invisible="not id or subtask_count == 0" context="{'default_user_ids': user_ids, 'default_project_id': project_id, 'default_milestone_id': milestone_id, 'subtask_action': True}">
+                            <div class="o_field_widget o_stat_info">
+                                <div class="d-flex align-items-baseline gap-1">
+                                    <span class="o_stat_value order-1">
+                                        <field name="subtask_count" widget="statinfo" nolabel="1" field_id="subtask_count_0"/>
+                                    </span>
+                                    <span class="o_stat_text order-2">Sub-tasks</span>
+                                </div>
+                                <div class="d-flex align-items-baseline gap-1">
+                                    <span class="o_stat_value">
+                                        <field name="closed_subtask_count" widget="statinfo" nolabel="1" field_id="closed_subtask_count_0"/>
+                                    </span>
+                                    <span class="o_stat_text order-2">Closed</span>
+                                </div>
+                            </div>
+                        </button>
+                        <!-- Dummy tag used to organize buttons -->
+                        <span id="end_button_box" invisible="1"/>
+                    </div>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active" widget_id="widget_1"/>
+                    <div class="oe_title pe-0">
+                        <h1 class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex w-100">
+                                <field name="priority" widget="priority_switch" class="me-3" field_id="priority_0"/>
+                                <field name="name" options="{'line_breaks': False}" widget="text" class="o_task_name text-truncate w-md-75 w-100 pe-2" placeholder="Task Title..." field_id="name_0"/>
+                            </div>
+                            <div class="d-flex justify-content-end o_state_container" invisible="not active">
+                                <field name="state" widget="project_task_state_selection" class="o_task_state_widget" on_change="1" field_id="state_1"/>
+                            </div>
+                            <div class="d-flex justify-content-start o_state_container w-100 w-md-50 w-lg-25" invisible="active">
+                                <field name="state" widget="project_task_state_selection" class="o_task_state_widget" on_change="1" field_id="state_2"/>
+                            </div>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="project_id" domain="[('active', '=', True), '|', ('company_id', '=', False), ('company_id', '=?', company_id)]" widget="project" on_change="1" can_create="True" can_write="True" field_id="project_id_1"/>
+                            <field name="milestone_id" placeholder="e.g. Product Launch" context="{'default_project_id': project_id}" invisible="not project_id or not allow_milestones" can_create="True" can_write="True" field_id="milestone_id_0"/>
+                            <field name="user_ids" class="o_task_user_field" options="{'no_open': True, 'no_quick_create': True}" widget="many2many_avatar_user" domain="[('share', '=', False), ('active', '=', True)]" on_change="1" can_create="True" can_write="True" field_id="user_ids_0"/>
+                            <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}" context="{'project_id': project_id}" can_create="True" can_write="True" field_id="tag_ids_0"/>
+                        </group>
+                        <group>
+                            <field name="active" invisible="1" field_id="active_0"/>
+                            <field name="partner_id" nolabel="0" widget="res_partner_many2one" class="o_task_customer_field" invisible="not project_id" on_change="1" can_create="True" can_write="True" field_id="partner_id_0"/>
+                            <label for="date_deadline"/>
+                            <div id="date_deadline_and_recurring_task" class="d-inline-flex w-100">
+                                <field name="date_deadline" nolabel="1" decoration-danger="date_deadline &lt; current_date and state not in ['1_done', '1_canceled']" field_id="date_deadline_0"/>
+                                </div>
+                            </group>
+                    </group>
+                        <field name="task_properties" columns="2" field_id="task_properties_0"/>
+                    <notebook>
+                        <page name="description_page" string="Description">
+                            <field name="description" type="html" options="{'collaborative': true, 'resizable': false}" placeholder="Add details about this task..." field_id="description_0"/>
+                        </page>
+                        <page name="sub_tasks_page" string="Sub-tasks" invisible="not project_id">
+                            <field name="child_ids" context="{'default_project_id': project_id, 'default_display_in_project': False, 'default_user_ids': user_ids, 'default_parent_id': id,                                     'default_partner_id': partner_id, 'default_milestone_id': allow_milestones and milestone_id}" widget="subtasks_one2many" on_change="1" field_id="child_ids_0">
+                                <tree editable="bottom" decoration-muted="state in ['1_done','1_canceled']" open_form_view="True">
+                                    <field name="allow_milestones" column_invisible="True" field_id="allow_milestones_0"/>
+                                    <field name="display_in_project" column_invisible="True" force_save="1" field_id="display_in_project_0"/>
+                                    <field name="sequence" widget="handle" field_id="sequence_0"/>
+                                    <field name="id" optional="hide" field_id="id_0"/>
+                                    <field name="parent_id" column_invisible="True" on_change="1" can_create="True" can_write="True" field_id="parent_id_0"/>
+                                    <field name="priority" widget="priority" nolabel="1" options="{'autosave': False}" width="40px" field_id="priority_0"/>
+                                    <field name="state" widget="project_task_state_selection" nolabel="1" options="{'autosave':  False}" width="40px" on_change="1" field_id="state_0"/>
+                                    <field name="name" widget="name_with_subtask_count" field_id="name_0"/>
+                                    <field name="subtask_count" column_invisible="True" field_id="subtask_count_0"/>
+                                    <field name="closed_subtask_count" column_invisible="True" field_id="closed_subtask_count_0"/>
+                                    <field name="project_id" string="Project" optional="hide" options="{'no_open': 1}" widget="project" on_change="1" can_create="True" can_write="True" field_id="project_id_0"/>
+                                    <field name="milestone_id" optional="hide" context="{'default_project_id': project_id}" column_invisible="not parent.allow_milestones" invisible="not allow_milestones" can_create="True" can_write="True" field_id="milestone_id_0"/>
+                                    <field name="partner_id" optional="hide" widget="res_partner_many2one" invisible="not project_id" on_change="1" can_create="True" can_write="True" field_id="partner_id_0"/>
+                                    <field name="user_ids" widget="many2many_avatar_user" optional="show" domain="[('share', '=', False), ('active', '=', True)]" on_change="1" can_create="True" can_write="True" field_id="user_ids_0"/>
+                                    <field name="company_id" column_invisible="True" on_change="1" can_create="True" can_write="True" field_id="company_id_0"/>
+                                    <field name="date_deadline" invisible="state in ['1_done', '1_canceled']" optional="hide" decoration-danger="date_deadline &lt; current_date" field_id="date_deadline_0"/>
+                                    <field name="activity_ids" string="Next Activity" widget="list_activity" optional="hide" on_change="1" field_id="activity_ids_0"/>
+                                     <field name="my_activity_date_deadline" string="My Deadline" widget="remaining_days" options="{'allow_order': '1'}" optional="hide" field_id="my_activity_date_deadline_0"/>
+                                    <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}" optional="hide" can_create="True" can_write="True" field_id="tag_ids_0"/>
+                                    <field name="stage_id" optional="hide" context="{'default_project_id': project_id}" on_change="1" can_create="True" can_write="True" field_id="stage_id_0"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="extra_info" string="Extra Info">
+                            <group>
+                                <group>
+                                    <field name="parent_id" context="{'search_view_ref' : 'project.view_task_search_form','search_default_project_id': project_id}" on_change="1" can_create="True" can_write="True" field_id="parent_id_1"/>
+                                    <field name="sequence" field_id="sequence_0"/>
+                                    <field name="email_cc" field_id="email_cc_0"/>
+                                    <field name="displayed_image_id" options="{'no_create': True}" can_create="True" can_write="True" field_id="displayed_image_id_0"/>
+                                </group>
+                                <group>
+                                    <field name="date_assign" on_change="1" field_id="date_assign_0"/>
+                                    <field name="date_last_stage_update" field_id="date_last_stage_update_0"/>
+                                </group>
+                                <group string="Working Time to Assign" invisible="working_hours_open == 0.0">
+                                    <field name="working_hours_open" widget="float_time" string="Hours" field_id="working_hours_open_0"/>
+                                    <field name="working_days_open" string="Days" field_id="working_days_open_0"/>
+                                </group>
+                                <group string="Working Time to Close" invisible="working_hours_close == 0.0">
+                                    <field name="working_hours_close" widget="float_time" string="Hours" field_id="working_hours_close_0"/>
+                                    <field name="working_days_close" string="Days" field_id="working_days_close_0"/>
+                                </group>
+                            </group>
+                        </page>
+                <page name="Intern">
+                    <field name="intern_ids" can_create="True" can_write="True" field_id="intern_ids_0"><tree>
+                    <field name="name" field_id="name_0"/>
+                    <field name="dob" field_id="dob_0"/>
+                    <field name="internship_duration" field_id="internship_duration_0"/>
+                    <field name="supervisor" field_id="supervisor_0"/>
+                    <field name="interview_day" field_id="interview_day_0"/>
+                    <field name="intern_profile" field_id="intern_profile_0"/>
+                    <field name="internship_type" field_id="internship_type_0"/>
+                    <field name="status" field_id="status_0"/>
+
+                    <button name="open_wizard" string="Change Interview Date" type="object" icon="fa-refresh" class="oe_highlight"/>
+
+                    <!-- <button name="282"  string="Change interview Day" icon="fa-refresh" class="oe_highlight" type="action"/> -->
+                    
+                    <!-- <button name="change_update" string="Multiple change" type="object" class="oe_highlight"/> -->
+                    <!-- <button name="change_interview_day" string="Change interview Day" type="object" class="oe_highlight"/> -->
+
+                </tree></field>
+                </page>
+                    </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" options="{'post_refresh':True}"/>
+                        <field name="activity_ids" on_change="1"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+
+
+                <form string="Task" class="o_form_project_tasks" js_class="project_task_form">
+                    <field name="recurrence_id" invisible="1" on_change="1" can_create="True" can_write="True" field_id="recurrence_id_0"/>
+                    <field name="allow_task_dependencies" invisible="1" field_id="allow_task_dependencies_0"/>
+                    <field name="rating_last_value" invisible="1" field_id="rating_last_value_0"/>
+                    <field name="rating_count" invisible="1" field_id="rating_count_0"/>
+                    <field name="allow_milestones" invisible="1" field_id="allow_milestones_0"/>
+                    <field name="parent_id" invisible="1" on_change="1" can_create="True" can_write="True" field_id="parent_id_0"/>
+                    <field name="company_id" invisible="1" on_change="1" can_create="True" can_write="True" field_id="company_id_0"/>
+                    <field name="project_id" invisible="1" on_change="1" can_create="True" can_write="True" field_id="project_id_0"/>
+                    <header>
+                        <field name="stage_id" widget="statusbar_duration" options="{'clickable': '1', 'fold_field': 'fold'}" invisible="not project_id and not stage_id" on_change="1" can_create="True" can_write="True" field_id="stage_id_0"/>
+                        <field name="state" widget="statusbar" options="{'clickable': '1', 'fold_field': 'fold'}" invisible="1" on_change="1" field_id="state_0"/>
+                        <field name="personal_stage_type_id" widget="statusbar" options="{'clickable': '1', 'fold_field': 'fold'}" invisible="project_id" domain="[('user_id', '=', uid)]" string="Personal Stage" can_create="True" can_write="True" field_id="personal_stage_type_id_0"/>
+                    </header>
+                    <sheet string="Task">
+                    <div class="oe_button_box" name="button_box">
+                        <!-- Dummy tag for organizing buttons, using position='replace' when inheriting -->
+                        <span id="button_products" invisible="1"/>
+                        <span id="button_worksheet" invisible="1"/>
+                        <!-- Dummy tag used to organize buttons, englobing the 3 buttons modifies the width of the button -->
+                        <span id="start_rating_buttons" invisible="1"/>
+                        <field name="rating_avg" invisible="1" on_change="1" field_id="rating_avg_0"/>
+                        <field name="rating_active" invisible="1" field_id="rating_active_0"/>
+                        <!-- Dummy tag used to organize buttons -->
+                        <span id="end_rating_buttons" invisible="1"/>
+                        <button name="action_open_parent_task" type="object" class="oe_stat_button" icon="fa-tasks" invisible="not parent_id">
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">Parent Task</span>
+                            </div>
+                        </button>
+                        <button name="250" type="action" class="oe_stat_button" icon="fa-tasks" invisible="not id or subtask_count == 0" context="{'default_user_ids': user_ids, 'default_project_id': project_id, 'default_milestone_id': milestone_id, 'subtask_action': True}">
+                            <div class="o_field_widget o_stat_info">
+                                <div class="d-flex align-items-baseline gap-1">
+                                    <span class="o_stat_value order-1">
+                                        <field name="subtask_count" widget="statinfo" nolabel="1" field_id="subtask_count_0"/>
+                                    </span>
+                                    <span class="o_stat_text order-2">Sub-tasks</span>
+                                </div>
+                                <div class="d-flex align-items-baseline gap-1">
+                                    <span class="o_stat_value">
+                                        <field name="closed_subtask_count" widget="statinfo" nolabel="1" field_id="closed_subtask_count_0"/>
+                                    </span>
+                                    <span class="o_stat_text order-2">Closed</span>
+                                </div>
+                            </div>
+                        </button>
+                        <!-- Dummy tag used to organize buttons -->
+                        <span id="end_button_box" invisible="1"/>
+                    </div>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active" widget_id="widget_1"/>
+                    <div class="oe_title pe-0">
+                        <h1 class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex w-100">
+                                <field name="priority" widget="priority_switch" class="me-3" field_id="priority_0"/>
+                                <field name="name" options="{'line_breaks': False}" widget="text" class="o_task_name text-truncate w-md-75 w-100 pe-2" placeholder="Task Title..." field_id="name_0"/>
+                            </div>
+                            <div class="d-flex justify-content-end o_state_container" invisible="not active">
+                                <field name="state" widget="project_task_state_selection" class="o_task_state_widget" on_change="1" field_id="state_1"/>
+                            </div>
+                            <div class="d-flex justify-content-start o_state_container w-100 w-md-50 w-lg-25" invisible="active">
+                                <field name="state" widget="project_task_state_selection" class="o_task_state_widget" on_change="1" field_id="state_2"/>
+                            </div>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="project_id" domain="[('active', '=', True), '|', ('company_id', '=', False), ('company_id', '=?', company_id)]" widget="project" on_change="1" can_create="True" can_write="True" field_id="project_id_1"/>
+                            <field name="milestone_id" placeholder="e.g. Product Launch" context="{'default_project_id': project_id}" invisible="not project_id or not allow_milestones" can_create="True" can_write="True" field_id="milestone_id_0"/>
+                            <field name="user_ids" class="o_task_user_field" options="{'no_open': True, 'no_quick_create': True}" widget="many2many_avatar_user" domain="[('share', '=', False), ('active', '=', True)]" on_change="1" can_create="True" can_write="True" field_id="user_ids_0"/>
+                            <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}" context="{'project_id': project_id}" can_create="True" can_write="True" field_id="tag_ids_0"/>
+                        </group>
+                        <group>
+                            <field name="active" invisible="1" field_id="active_0"/>
+                            <field name="partner_id" nolabel="0" widget="res_partner_many2one" class="o_task_customer_field" invisible="not project_id" on_change="1" can_create="True" can_write="True" field_id="partner_id_0"/>
+                            <label for="date_deadline"/>
+                            <div id="date_deadline_and_recurring_task" class="d-inline-flex w-100">
+                                <field name="date_deadline" nolabel="1" decoration-danger="date_deadline &lt; current_date and state not in ['1_done', '1_canceled']" field_id="date_deadline_0"/>
+                                </div>
+                            </group>
+                    </group>
+                        <field name="task_properties" columns="2" field_id="task_properties_0"/>
+                    <notebook>
+                        <page name="description_page" string="Description">
+                            <field name="description" type="html" options="{'collaborative': true, 'resizable': false}" placeholder="Add details about this task..." field_id="description_0"/>
+                        </page>
+                        <page name="sub_tasks_page" string="Sub-tasks" invisible="not project_id">
+                            <field name="child_ids" context="{'default_project_id': project_id, 'default_display_in_project': False, 'default_user_ids': user_ids, 'default_parent_id': id,                                     'default_partner_id': partner_id, 'default_milestone_id': allow_milestones and milestone_id}" widget="subtasks_one2many" on_change="1" field_id="child_ids_0">
+                                <tree editable="bottom" decoration-muted="state in ['1_done','1_canceled']" open_form_view="True">
+                                    <field name="allow_milestones" column_invisible="True" field_id="allow_milestones_0"/>
+                                    <field name="display_in_project" column_invisible="True" force_save="1" field_id="display_in_project_0"/>
+                                    <field name="sequence" widget="handle" field_id="sequence_0"/>
+                                    <field name="id" optional="hide" field_id="id_0"/>
+                                    <field name="parent_id" column_invisible="True" on_change="1" can_create="True" can_write="True" field_id="parent_id_0"/>
+                                    <field name="priority" widget="priority" nolabel="1" options="{'autosave': False}" width="40px" field_id="priority_0"/>
+                                    <field name="state" widget="project_task_state_selection" nolabel="1" options="{'autosave':  False}" width="40px" on_change="1" field_id="state_0"/>
+                                    <field name="name" widget="name_with_subtask_count" field_id="name_0"/>
+                                    <field name="subtask_count" column_invisible="True" field_id="subtask_count_0"/>
+                                    <field name="closed_subtask_count" column_invisible="True" field_id="closed_subtask_count_0"/>
+                                    <field name="project_id" string="Project" optional="hide" options="{'no_open': 1}" widget="project" on_change="1" can_create="True" can_write="True" field_id="project_id_0"/>
+                                    <field name="milestone_id" optional="hide" context="{'default_project_id': project_id}" column_invisible="not parent.allow_milestones" invisible="not allow_milestones" can_create="True" can_write="True" field_id="milestone_id_0"/>
+                                    <field name="partner_id" optional="hide" widget="res_partner_many2one" invisible="not project_id" on_change="1" can_create="True" can_write="True" field_id="partner_id_0"/>
+                                    <field name="user_ids" widget="many2many_avatar_user" optional="show" domain="[('share', '=', False), ('active', '=', True)]" on_change="1" can_create="True" can_write="True" field_id="user_ids_0"/>
+                                    <field name="company_id" column_invisible="True" on_change="1" can_create="True" can_write="True" field_id="company_id_0"/>
+                                    <field name="date_deadline" invisible="state in ['1_done', '1_canceled']" optional="hide" decoration-danger="date_deadline &lt; current_date" field_id="date_deadline_0"/>
+                                    <field name="activity_ids" string="Next Activity" widget="list_activity" optional="hide" on_change="1" field_id="activity_ids_0"/>
+                                     <field name="my_activity_date_deadline" string="My Deadline" widget="remaining_days" options="{'allow_order': '1'}" optional="hide" field_id="my_activity_date_deadline_0"/>
+                                    <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}" optional="hide" can_create="True" can_write="True" field_id="tag_ids_0"/>
+                                    <field name="stage_id" optional="hide" context="{'default_project_id': project_id}" on_change="1" can_create="True" can_write="True" field_id="stage_id_0"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="extra_info" string="Extra Info">
+                            <group>
+                                <group>
+                                    <field name="parent_id" context="{'search_view_ref' : 'project.view_task_search_form','search_default_project_id': project_id}" on_change="1" can_create="True" can_write="True" field_id="parent_id_1"/>
+                                    <field name="sequence" field_id="sequence_0"/>
+                                    <field name="email_cc" field_id="email_cc_0"/>
+                                    <field name="displayed_image_id" options="{'no_create': True}" can_create="True" can_write="True" field_id="displayed_image_id_0"/>
+                                </group>
+                                <group>
+                                    <field name="date_assign" on_change="1" field_id="date_assign_0"/>
+                                    <field name="date_last_stage_update" field_id="date_last_stage_update_0"/>
+                                </group>
+                                <group string="Working Time to Assign" invisible="working_hours_open == 0.0">
+                                    <field name="working_hours_open" widget="float_time" string="Hours" field_id="working_hours_open_0"/>
+                                    <field name="working_days_open" string="Days" field_id="working_days_open_0"/>
+                                </group>
+                                <group string="Working Time to Close" invisible="working_hours_close == 0.0">
+                                    <field name="working_hours_close" widget="float_time" string="Hours" field_id="working_hours_close_0"/>
+                                    <field name="working_days_close" string="Days" field_id="working_days_close_0"/>
+                                </group>
+                            </group>
+                        </page>
+                <page name="Intern">
+                    <field name="intern_ids" can_create="True" can_write="True" field_id="intern_ids_0"><tree>
+                    <field name="name" field_id="name_0"/>
+                    <field name="dob" field_id="dob_0"/>
+                    <field name="internship_duration" field_id="internship_duration_0"/>
+                    <field name="supervisor" field_id="supervisor_0"/>
+                    <field name="interview_day" field_id="interview_day_0"/>
+                    <field name="intern_profile" field_id="intern_profile_0"/>
+                    <field name="internship_type" field_id="internship_type_0"/>
+                    <field name="status" field_id="status_0"/>
+
+                    <button name="open_wizard" string="Change Interview Date" type="object" icon="fa-refresh" class="oe_highlight"/>
+
+                    <!-- <button name="282"  string="Change interview Day" icon="fa-refresh" class="oe_highlight" type="action"/> -->
+                    
+                    <!-- <button name="change_update" string="Multiple change" type="object" class="oe_highlight"/> -->
+                    <!-- <button name="change_interview_day" string="Change interview Day" type="object" class="oe_highlight"/> -->
+
+                </tree></field>
+                </page>
+                    </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" options="{'post_refresh':True}"/>
+                        <field name="activity_ids" on_change="1"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+            
+            <record id='internship_registration_action' model='ir.actions.act_window'>
+                <field name="name">internship Registration</field>
+                <field name="res_model">internship.registration</field>
+                <field name="view_mode">tree,kanban,pivot,graph,form</field>
+              
+            </record> 
+
+            <menuitem name="Internship" id="registration_base_menu" />
+            <menuitem name="Registration" id="menu_registration" parent="registration_base_menu" action="internship_registration_action"/>
+        
+        <record id="view_project_tasks_pivot" model="ir.ui.view">
+            <field name="model">internship.registration</field>
+            <field name="arch" type="xml">
+            <pivot>
+                <field name="name" type="row"/>
+                <field name="status" type="col"/>
+                <field name="interview_day" type="col"/>
+            </pivot>
+            </field>
+        </record>
+
+        <record id="internship_registration_kanban" model="ir.ui.view">
+            <field name="model">internship.registration</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="status">
+
+                    <progressbar field="status" colors='{
+                        "pending": "warning",
+                        "accept": "success",
+                        "reject": "danger",
+                        "end": "muted"
+                        }'
+                        sum_fields="name" />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="o_dropdown_kanban dropdown">
+                                    <!-- <a class="dropdown-toggle btn" role="button" data-toggle="dropdown"
+                                    title="Dropdown menu" href="#">
+                                        <span class="fa fa-ellipsis-v" />
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable">
+                                            <a role="menuitem" type="edit" class="dropdown-item">Edit</a>
+                                        </t>
+
+                                        <t t-if="widget.deletable">
+                                            <a role="menuitem" type="delete" class="dropdown-item">Delete</a>
+                                        </t>
+                                    </div> -->
+
+                                   <p>Status: <field name="status" /></p> 
+                                </div>
+                                <div class="oe_kanban_content">
+                                    <div class="o_kanban_record_title">
+                                        <p>Intern: <field name="name" /></p> 
+
+                                    </div>
+                                    <div class="o_kanban_record_body">
+                                        <p>Supervisor: <strong><field name="supervisor"  /></strong></p> 
+                                        <p>Internship Type: <strong><field name="internship_type" /></strong></p>
+                                        <p>Intern Profile: <strong><field name="intern_profile" /></strong></p>
+                                        <p>Internship Duration: <strong><field name="internship_duration" /> Months</strong></p>
+
+                                    </div>
+                                    <div class="o_kanban_record_bottom">
+                                        <div class="oe_kanban_bottom_left">
+                                            <p> </p>
+                                        </div>
+                                        <div class="oe_kanban_bottom_right">
+                                            <p>Interview Day <field name="interview_day" /></p>
+                                        </div>
+                                    </div> 
+                                    <div class="oe_clear"/>
+                                </div> 
+                            </div> 
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <!-- <record id="internship_registration_search" model="ir.ui.view">
+            <field name="name">Internship Registration Search</field>
+            <field name="model">internship.registration</field>
+            <field name="arch" type="xml">
+                <search>
+                
+                    <filter name="item_not_done" string="Not Done" domain="[('x_is_done', '=', False)]" />
+                </search>
+            </field>
+        </record> -->
+        
+        <record id="internship_registration_view_form" model="ir.ui.view">
+            <field name="name">Internship Registration Form</field>
+            <field name="model">internship.registration</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                   
+                        <button name="status_accept" string="Accept" type="object" class="oe_highlight" 
+                        invisible= "status == 'accept' or status == 'refuse' or status == 'end'"  />
+                        <button name="status_refuse" string="Refuse" type="object" class="oe_highlight" 
+                        invisible= "status == 'accept' or status == 'refuse' or status == 'end'"  />
+                        <button name="status_end" string="End" type="object" class="btn-primary"
+                        invisible= "status == 'pending' or status == 'end'" />
+                        <button name="call_create_interview" string="create intern interview" type="object" class="btn-primary" 
+                        context="{'active_id': active_id}"/>
+                        
+                        <!-- <button name="status_end" string="End" type="object" class="oe_highlight" invisible="1"/> -->
+                        <field name="status" widget="statusbar" />
+                        
+                    </header>
+                    <app name="registration" position="inside">
+                        <div style="text-align:center">
+                            <h2 style="text-decoration: underline;">Register a new intern</h2>
+                                <div>
+                                    <div class="row mt16 o_form_container" name="form_container">
+                                        <div class="col-6 col-lg-6 o_setting_box">
+                                            <div>
+                                                Fill the following form with the new intern informations
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </app>
+                    <group>
+                       
+                        <group>        
+                            <field name="name"/>
+                            <field name="end_visibility" invisible= "[('end_visibility', '=', True)]"/>
+                            <field name="dob"/>
+                        </group>
+                        <group>
+                            <field name="internship_duration"/>
+                            <field name="supervisor"/>
+                        </group>
+                        <group>
+                            <field name="interview_day"/>
+                            <field name="intern_profile"/>
+                            <field name="highlighted_id" />
+                            <!-- <field name="intern_starting_date" /> -->
+                            
+                        </group>
+                        <group>
+                            <field name="internship_type"/>
+                            <field name="email"/>
+
+                        </group>
+                        
+                    
+                    </group>
+                        
+                </form>
+            </field>
+        </record>
+        <record id="internship_registration_graph" model="ir.ui.view">
+            <field name="model">internship.registration</field>
+            <field name="arch" type="xml">
+                <graph type="bar">
+                    <field name="internship_duration"/>
+                    <field name="interview_day"/>
+                    <field name="supervisor"/>
+                    <field name="internship_type"/>
+                    <field name="intern_profile"/>
+
+                </graph>
+            </field>
+        </record>
+
+
+        <record id="intern_registration_view_tree" model="ir.ui.view">
+            <field name="name">internship registration tree</field>
+            <field name="model">internship.registration</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="dob"/>
+                    <field name="internship_duration"/>
+                    <field name="supervisor"/>
+                    <field name="interview_day"/>
+                    <field name="intern_profile"/>
+                    <field name="internship_type"/>
+                    <field name="status"/>
+
+                    <button name="open_wizard" string="Change Interview Date" type="object" icon="fa-refresh" class="oe_highlight" />
+
+                    
+                    <!-- <button name="change_update" string="Multiple change" type="object" class="oe_highlight"/> -->
+                    <!-- <button name="change_interview_day" string="Change interview Day" type="object" class="oe_highlight"/> -->
+
+                </tree>
+            </field>
+        </record>
+
+         <record id='internship_interview_action' model='ir.actions.act_window'>
+                <field name="name">interview_action</field>
+                <field name="res_model">interview</field>
+                <field name="view_mode">tree,kanban,form</field>
+            </record>
+
+
+             <menuitem name="Interview" id="internship_interview_menu" parent="registration_base_menu" 
+            action="internship_interview_action"/>
+
+            <record id="internship_interview_view_form" model="ir.ui.view">
+                <field name="name">Interview_Form</field>
+                <field name="model">interview</field>
+                <field name="arch" type="xml">
+                <form>
+                        <widget name="web_ribbon" title="WillMakeIt" bg_color="bg-danger"/>
+
+                    <group>
+                        <field name="technical_skills" string ="Technical skills:" placeholder="e.g 40%"/>
+                        <field name="relevant_experience" placeholder="e.g 50%"/>
+                    </group>
+                    <group>
+                        <field name="interpersonal_skills" placeholder="e.g 60%"/>
+                        <field name="motivation_passion" placeholder="e.g 70%"/>
+                    </group>
+                    <group>
+                        <field name="adaptability_flexibility" placeholder="e.g 80%"/>
+                        <field name="problem_solving_abilities" placeholder="e.g 90%"/>
+                    </group>
+                    <group>
+                        <field name="cultural_fit" placeholder="e.g 100%"/>
+                    </group>
+                    <group class="col-12">
+                       <button name="accept" string="Accept" type="object" class="oe_highlight"/>
+                       <button name="refuse" string="Refuse" type="object" bg_color="bg-danger"/>
+                    </group>
+                    
+                    
+                    <notebook>
+                        <page name="Info" class="oe_highlight">
+                            <group>
+                                <field name="intern" />
+                                <field name="starting_date" />
+                            </group>
+
+                            <group>
+                                <field name="ending_date" />
+                                <field name="intern_marks" />
+                            </group>
+ 
+                        </page>
+                    </notebook>
+                    </form>
+            </field>
+        </record>
+
+        <record id="internship_interview_view_tree" model="ir.ui.view">
+                <field name="name">Interview_tree</field>
+                <field name="model">interview</field>
+                <field name="arch" type="xml">
+                <tree>
+                    <field name="intern" />
+                    <field name="intern_name" />
+                    <field name="starting_date" />
+                    <field name="ending_date" />
+                    <field name="intern_marks" />
+                 </tree>
+            </field>
+        </record>
+
+        <record id='internship_question_action' model='ir.actions.act_window'>
+            <field name="name">Questions_action</field>
+            <field name="res_model">interview.questions</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+
+        <menuitem name="Questions" id="internship_question_menu" parent="registration_base_menu" 
+            action="internship_question_action"/>
+        
+
+        <record id="intern_interview_view_tree" model="ir.ui.view">
+            <field name="name">internship interview tree</field>
+            <field name="model">interview.questions</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="question" />
+                </tree>
+            </field>
+        </record>
+    
+    <record id="view_project_tasks_graph" model="ir.ui.view">
+        <field name="name">project task graph</field>
+        <field name="model">project.task</field>
+        <field name="arch" type="xml">
+            <graph type="bar">
+                <field name="activity_user_id"/>
+                <field name="activity_ids"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="inherit_project_form" model="ir.ui.view">
+        <field name="name">project_task_form_inherit</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[@name='extra_info']" position="after">
+                <page name="Intern">
+                    <field name="intern_ids"/>
+                </page>
+        </xpath>
+        </field>
+    </record>
+
+<record id="action_my_tasks" model="ir.actions.act_window">
+    <field name="name">Activity</field>
+    <field name="res_model">project.task</field>
+    <field name="view_mode">tree,kanban,form</field>
+</record>
+  <menuitem name="Activity" id="menu_my_tasks" parent="registration_base_menu" action="action_my_tasks"/>
+
+       
+    </odoo>

@@ -1,0 +1,66 @@
+<odoo>
+    <record id="q1" model="interview.questions">
+        <field name="question">GENERAL QUESTIONS</field>
+    </record>
+
+    <record id="q2" model="interview.questions">
+        <field name="question">Question 1: Tell me about yourself.</field>
+    </record> 
+
+    <record id="q3" model="interview.questions">
+        <field name="question">Question 2: How did you become aware of Third?</field>
+    </record>
+
+    <record id="q4" model="interview.questions">
+        <field name="question">Question 3: What different internships have you already completed?</field>
+    </record>
+
+    <record id="q5" model="interview.questions">
+        <field name="question">Question 4: Have you heard of the Linux system? If yes, have you used it and on what occasion?</field>
+    </record>
+
+    <record id="q6" model="interview.questions">
+        <field name="question">Question 5: Have you heard of Odoo? If yes, what do you know about it?</field>
+    </record> 
+    
+    <record id="q7" model="interview.questions">
+        <field name="question">COMMERCIAL</field>
+    </record>
+
+    <record id="q8" model="interview.questions">
+        <field name="question">Question 6: Have you ever won a contract? If yes, what was the contract and how did it happen?</field>
+    </record> 
+
+    <record id="q9" model="interview.questions">
+        <field name="question">Question 7: What is your level of experience in marketing?</field>
+    </record>
+
+    <record id="q10" model="interview.questions">
+        <field name="question">Question 8: How do you manage communication with a team and clients?</field>
+    </record> 
+    
+    <record id="q11" model="interview.questions">
+        <field name="question">IT</field>
+    </record>
+
+    <record id="q12" model="interview.questions">
+        <field name="question">Question 6: Which programming languages do you use?</field>
+    </record> 
+    
+    <record id="q13" model="interview.questions">
+        <field name="question">Question 7: Do you program in Python? If yes, have you developed a project using this language?</field>
+    </record>
+
+    <record id="q14" model="interview.questions">
+        <field name="question">Question 8: Are you familiar with XML?</field>
+    </record> 
+    
+    <record id="q15" model="interview.questions">
+        <field name="question">Question 9: Have you heard of virtualization with Docker?</field>
+    </record>
+
+    <record id="q16" model="interview.questions">
+        <field name="question">Question 10: What do you know about computer networks?</field>
+    </record> 
+    
+</odoo>
